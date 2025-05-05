@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration – MAB VIII</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    /* —————————————————————————————
+       Global adjustments for centering and occupying full width/height
+       ————————————————————————————— */
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* distributes header, nav, section, footer */
+    }
+    header, nav, section, footer {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Centered Header */
+    header {
+      text-align: center;
+      padding-top: 1rem;
+    }
+
+    /* Menu distributed width-wise */
+    nav {
+      display: flex;
+      justify-content: space-around;
+    }
+    nav a.active {
+      color: var(--azul-claro);
+      border-bottom: 3px solid var(--azul-claro);
+    }
+
+    /* Left-aligned Section */
+    section {
+      text-align: left;       /* now everything to the left */
+      padding: 1rem 2%;
+      flex: 1;
+    }
+
+    /* Fluid Table (original) */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    thead th {
+      background-color: var(--gris-callout);
+    }
+
+    /* Discounts (original) */
+    .descuentos {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+      max-width: 400px;
+    }
+    .descuentos li {
+      margin-bottom: 0.4rem;
+    }
+    .descuentos strong {
+      color: var(--azul-claro);
+    }
+
+    /* Registration button aligned left */
+    .boton {
+      display: inline-block;
+      margin: 1rem 0;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      font-weight: 700;
+      /* optional: if you want the button to start at the left margin, ensure no auto margins */
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="Logo_Blanco.png" alt="MAB VIII logo" class="logo">
+    <h1>MAB VIII – Registration</h1>
+    <p>Argentine Meeting on Soft Matter – La Plata, December 18th and 19th, 2025</p> 
+    <!-- NOTE: Date was changed to December here, conflicting with other files (September). I'll keep it as December as per this file's original text but you should verify the correct date. -->
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="inscripcion.html" class="active">Registration</a>
+    <a href="lugar.html">Venue</a>
+    <a href="conferencistas.html">Speakers</a>
+    <a href="abstracts.html">Abstract Submission</a>
+    <a href="cronograma.html">Schedule</a>
+    <a href="comite.html">Committee</a>
+    <a href="certificados.html">Certificates</a>
+  </nav>
+
+  <section>
+    <h2>Registration Categories</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Includes</th>
+          <th>Fee (ARS)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>RAFA + MAB</td>
+          <td>Talks, digital materials, coffee breaks</td>
+          <td>TBC</td> <!-- TBC = To be confirmed -->
+        </tr>
+        <tr>
+          <td>MAB only</td>
+          <td>Talks, digital materials, coffee breaks</td>
+          <td>TBC</td> <!-- TBC = To be confirmed -->
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Discounts for Students and Young Researchers</h3>
+    <ul class="descuentos">
+      <li><strong>25%</strong> <em>Postdoctoral</em> students</li>
+      <li><strong>50%</strong> <em>Doctoral</em> students</li>
+      <li><strong>75%</strong> <em>Undergraduate</em> students</li>
+    </ul>
+
+    <a href="https://forms.gle/cTYAmiHMVdHrWvdG6" class="boton" target="_blank">Go to Registration Form</a>
+  </section>
+
+  <footer>
+    &copy; 2025 MAB VIII · La Plata
+  </footer>
+
+</body>
+</html>

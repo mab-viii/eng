@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule – MAB VIII</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    /* Local adjustments for side-by-side tables */
+    .dias {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .dia {
+      flex: 1 1 320px; /* minimum 320px and expands */
+    }
+    .dia table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .dia th {
+      background-color: var(--gris-callout);
+    }
+
+        nav {
+      display: flex;
+      justify-content: space-around;
+      padding: 0.5rem 0;
+    }
+    nav a {
+      flex: 1;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      padding: 0.5rem 0;
+    }
+    nav a.active {
+      color: var(--azul-claro);
+      border-bottom: 3px solid var(--azul-claro);
+    }
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="Logo_Blanco.png" alt="MAB VIII logo" class="logo">
+    <h1>MAB VIII – Tentative Schedule</h1>
+    <p>Activities of September 18th and 19th, 2025</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="inscripcion.html">Registration</a>
+    <a href="lugar.html">Venue</a>
+    <a href="conferencistas.html">Speakers</a>
+    <a href="abstracts.html">Abstract Submission</a>
+    <a href="cronograma.html" class="active">Schedule</a>
+    <a href="comite.html">Committee</a>
+    <a href="certificados.html">Certificates</a>
+  </nav>
+
+  <section>
+    <div class="dias">
+      <!-- Thursday -->
+      <div class="dia">
+        <h2>Thursday, September 18th</h2>
+        <table>
+          <tr><th>Time</th><th>Activity</th></tr>
+          <tr><td>09:00</td><td>Registration</td></tr>
+          <tr><td>09:20</td><td>Opening</td></tr>
+          <tr><td>09:30</td><td>Talk 1</td></tr>
+          <tr><td>10:10</td><td>Talk 2</td></tr>
+          <tr><td>10:50</td><td>Coffee Break</td></tr>
+          <tr><td>11:10</td><td>Talk 3</td></tr>
+          <tr><td>11:50</td><td>Talk 4</td></tr>
+          <tr><td>12:30</td><td>Lunch</td></tr>
+          <tr><td>14:00</td><td>Talk 5</td></tr>
+          <tr><td>14:40</td><td>Talk 6</td></tr>
+          <tr><td>15:20</td><td>Coffee Break</td></tr>
+          <tr><td>15:40</td><td>Short Talks (x5)</td></tr>
+          <tr><td>17:30</td><td>Poster Session</td></tr>
+        </table>
+      </div>
+      <!-- Friday -->
+      <div class="dia">
+        <h2>Friday, September 19th</h2>
+        <table>
+          <tr><th>Time</th><th>Activity</th></tr>
+          <tr><td>09:30</td><td>Talk 7</td></tr>
+          <tr><td>10:10</td><td>Talk 8</td></tr>
+          <tr><td>10:50</td><td>Coffee Break</td></tr>
+          <tr><td>11:10</td><td>Talk 9</td></tr>
+          <tr><td>11:50</td><td>Talk 10</td></tr>
+          <tr><td>12:30</td><td>Lunch</td></tr>
+          <tr><td>14:00</td><td>Short Talks (x5)</td></tr>
+          <tr><td>15:30</td><td>Coffee Break</td></tr>
+          <tr><td>15:40</td><td>Round Table – Argentine Soft Matter Startups</td></tr>
+          <tr><td>17:00</td><td>Awards Ceremony</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 MAB VIII · La Plata
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speakers – MAB VIII</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+
+  <!-- Local adjustments for horizontal layout -->
+  <style>
+
+        nav {
+      display: flex;
+      justify-content: space-around;
+      padding: 0.5rem 0;
+    }
+    nav a {
+      flex: 1;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      padding: 0.5rem 0;
+    }
+    nav a.active {
+      color: var(--azul-claro);
+      border-bottom: 3px solid var(--azul-claro);
+    }
+/* grid and card */
+.grid{
+  display:flex;
+  gap:1.5rem;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:2rem;
+}
+.card{
+  background:#fff;
+  padding:1.5rem;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,.1);
+  text-align:center;
+  width:240px;           /* wider */
+}
+.card h3{
+  font-size:1rem;        /* slightly smaller text */
+  margin-bottom:0.3rem;
+}
+.card p{
+  margin:0;
+  word-break:break-word; /* allows breaking long words */
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="Logo_Blanco.png" alt="MAB VIII logo" class="logo">
+    <div>
+      <h1>MAB VIII – Invited Speakers</h1>
+      <p>Invited Talks</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="inscripcion.html">Registration</a>
+    <a href="lugar.html">Venue</a>
+    <a href="conferencistas.html" class="active">Speakers</a>
+    <a href="abstracts.html">Abstract Submission</a>
+    <a href="cronograma.html">Schedule</a>
+    <a href="comite.html">Committee</a>
+    <a href="certificados.html">Certificates</a>
+  </nav>
+
+  <section>
+    <h2>List of Speakers</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Mateus Cardoso</h3>
+        <p>LNLS‑Sirius<br>Brazil</p>
+      </div>
+
+      <div class="card">
+        <h3>Ana Beloqui</h3>
+        <p>POLYMAT (UPV/EHU)<br>Spain</p>
+      </div>
+
+      <div class="card">
+        <h3>Verónica Marconi</h3>
+        <p>FaMAF - UNC<br>Argentina</p>
+      </div>
+
+      <div class="card">
+        <h3>Hernán Ritacco</h3>
+        <p>UNS<br>Argentina</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 MAB VIII · La Plata
+  </footer>
+
+</body>
+</html>
