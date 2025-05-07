@@ -1,188 +1,302 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAB VIII – La Plata 2025</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8">
 
-  <style>
-    /* Tus estilos existentes */
-    header {
-      text-align: left;
-      padding-left: 5vw;
-      /* === AÑADIDO === */
-      position: relative; /* Necesario para posicionar elementos hijos de forma absoluta */
-      padding-top: 1rem; /* Espacio opcional para que los links no queden pegados al borde superior */
-      padding-bottom: 1rem; /* Espacio opcional */
-      /* Si tu título es muy largo, este padding-right evita que se solape con los links: */
-      /* padding-right: 120px; /* Ajusta este valor según el ancho de tus links */
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* Si quieres que el header tenga un fondo oscuro como en la imagen que mostraste (para que Logo_Blanco.png y texto blanco se vean): */
-    /*
-    header {
-      background-color: #004080; / Azul oscuro de ejemplo /
-      color: white; / Esto haría blanco el texto del h1 por defecto /
-    }
-    header div h1 { / Si estableces color blanco en header, esto asegura que el h1 también lo sea /
-        color: white;
-    }
-    */
+  <title>MAB VIII – La Plata 2025</title>
 
-    nav {
-      display: flex;
-      justify-content: space-around;
-      padding: 0.5rem 0;
-    }
-    nav a {
-      flex: 1;
-      text-align: center;
-      text-decoration: none;
-      color: inherit;
-      padding: 0.5rem 0;
-    }
-    nav a.active {
-      color: var(--azul-claro);
-      border-bottom: 3px solid var(--azul-claro);
-    }
-    .hero {
-      text-align: left;
-      padding: 1rem 2%;
-    }
-    .hero h2 {
-      margin-bottom: 0.5rem;
-    }
-    .hero p {
-      line-height: 1.5;
-      margin: 0;
-      width: 100%;
-      display: block;
-    }
-    .cards {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      padding-top: 1rem;
-    }
-    .card {
-      flex: 1 1 280px;
-      max-width: 400px;
-      background: #f9f9f9;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .card h3 {
-      margin-bottom: 0.5rem;
-    }
-    .fechas {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-      margin-left: 1rem;
-    }
-    .fechas li {
-      margin-bottom: 0.4rem;
-    }
-    .fechas strong {
-      font-weight: 700;
-    }
-    header .logo { /* Tu estilo original para el logo */
-      height: 200px;
-      width: auto;
-    }
 
-    /* === NUEVOS ESTILOS para los enlaces de idioma === */
-    .language-switcher {
-      position: absolute;
-      top: 1.5rem;      /* Ajusta esta distancia desde el borde superior del header */
-      right: 3vw;       /* Ajusta esta distancia desde el borde derecho del header */
-      font-family: 'Montserrat', sans-serif;
-      /* Si el header tiene fondo oscuro y texto blanco, el separador "|" también debe ser blanco */
-      /* color: white; */ /* Descomenta si el separador "|" debe ser blanco */
-    }
 
-    .language-switcher a {
-      text-decoration: none;
-      font-weight: bold;
-      margin-left: 0.4rem; /* Espacio entre "ESP", "|" y "ENG" */
-      font-size: 0.9em;
-      /* Color de los enlaces: si el header tiene fondo oscuro, ponlos blancos */
-      color: #000; /* Color por defecto (negro). Cambia a 'white' si el fondo del header es oscuro. */
-      /* color: white; */ /* Descomenta esta línea si el fondo de tu header es oscuro */
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-    .language-switcher a:first-child {
-      margin-left: 0;
-    }
-    /* === FIN DE NUEVOS ESTILOS === */
+  <link rel="stylesheet" href="estilos.css">
 
-  </style>
+
+
+  <!-- Local Adjustments -->
+
+  <style>
+
+    header{ text-align:left; padding-left:5vw; }
+
+
+
+
+
+        nav {
+
+      display: flex;
+
+      justify-content: space-around;
+
+      padding: 0.5rem 0;
+
+    }
+
+    nav a {
+
+      flex: 1;
+
+      text-align: center;
+
+      text-decoration: none;
+
+      color: inherit;
+
+      padding: 0.5rem 0;
+
+    }
+
+    nav a.active {
+
+      color: var(--azul-claro);
+
+      border-bottom: 3px solid var(--azul-claro);
+
+    }
+
+    /* Main section centered */
+
+.hero {
+
+  text-align: left;
+
+  /* optional: add some side padding so it doesn't touch the edge */
+
+  padding: 1rem 2%;
+
+}
+
+
+
+    .hero h2 {
+
+      margin-bottom: 0.5rem;
+
+    }
+
+    .hero p {
+
+      line-height: 1.5;
+
+    }
+
+    /* Cards centered and with flex-wrap */
+
+    .cards {
+
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 1.5rem;
+
+      padding-top: 1rem;
+
+    }
+
+    .card {
+
+      flex: 1 1 280px;
+
+      max-width: 400px;
+
+      background: #f9f9f9;
+
+      padding: 1rem;
+
+      border-radius: 8px;
+
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+      text-align: center;
+
+    }
+
+    .card h3 {
+
+      margin-bottom: 0.5rem;
+
+    }
+
+    .fechas { /* Dates list */
+
+        list-style: none; /* Remove default bullets */
+
+        padding: 0; /* Remove default padding */
+
+        text-align: left; /* Align text left inside the card */
+
+        margin-left: 1rem; /* Indent list slightly */
+
+    }
+
+    .fechas li {
+
+      margin-bottom: 0.4rem;
+
+    }
+
+    .fechas strong {
+
+      font-weight: 700;
+
+    }
+
+
+
+/* Ensure the paragraph takes full available width */
+
+.hero p {
+
+  margin: 0;            /* no auto margins */
+
+  width: 100%;          /* 100% of container, which is already full width */
+
+  display: block;       /* just in case */
+
+}
+
+/* in your local <style>, at the end */
+
+header .logo {
+
+  height: 200px;  /* adjust this value as needed */
+
+  width: auto;    /* maintains proportion */
+
+}
+
+
+
+
+
+  </style>
+
 </head>
+
 <body>
 
-  <header>
-    <img src="Logo_Blanco.png" alt="MAB VIII logo" class="logo">
-    <div>
-      <h1>Argentine Meeting on Soft Matter – La Plata, September 18th & 19th, 2025</h1>
-    </div>
-    <div class="language-switcher">
-      <a href="#" lang="es">ESP</a> | <a href="#" lang="en">ENG</a>
-    </div>
-  </header>
 
-  <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="inscripcion.html">Registration</a>
-    <a href="lugar.html">Venue</a>
-    <a href="conferencistas.html">Speakers</a>
-    <a href="abstracts.html">Abstract Submission</a>
-    <a href="cronograma.html">Schedule</a>
-    <a href="comite.html">Committee</a>
-    <a href="certificados.html">Certificates</a>
-  </nav>
 
-  <section class="hero" id="home">
-    <h2>Welcome to MAB VIII</h2>
-    <p>
-      The Argentine Meeting on Soft Matter (MAB VIII) is a space for academic and scientific exchange dedicated to soft materials, the physics and chemistry of complex systems, and applied nanotechnology.
-      We will gather in the city of La Plata on <strong>September 18th and 19th, 2025</strong>.
-    </p>
-  </section>
+  <header>
 
-  <section class="cards">
-    <div class="card">
-      <h3>Important Dates</h3>
-      <ul class="fechas">
-        <li><strong>Abstract Submission:</strong> until July 1st</li>
-        <li><strong>Notification:</strong> August 1st</li>
-      </ul>
-    </div>
+    <img src="Logo_Blanco.png" alt="MAB VIII logo" class="logo">
 
-    <div class="card">
-      <h3>Formats</h3>
-      <p>
-        Participate with oral presentations or posters.
-      </p>
-    </div>
+    <div>
 
-    <div class="card">
-      <h3>Contact</h3>
-      <p>albesa@inifta.unlp.edu.ar<br>
-        apicco@inifta.unlp.edu.ar<br>
-        La Plata, Argentina
-      </p>
-    </div>
-  </section>
+      <h1>Argentine Meeting on Soft Matter – La Plata, September 18th & 19th, 2025</h1>
 
-  <footer>
-    &copy; 2025 MAB VIII · La Plata
-  </footer>
+    </div>
+
+  </header>
+
+
+
+  <nav>
+
+    <a href="index.html" class="active">Home</a>
+
+    <a href="inscripcion.html">Registration</a>
+
+    <a href="lugar.html">Venue</a>
+
+    <a href="conferencistas.html">Speakers</a>
+
+    <a href="abstracts.html">Abstract Submission</a>
+
+    <a href="cronograma.html">Schedule</a>
+
+    <a href="comite.html">Committee</a>
+
+    <a href="certificados.html">Certificates</a>
+
+  </nav>
+
+
+
+  <section class="hero" id="home">
+
+    <h2>Welcome to MAB VIII</h2>
+
+    <p>
+
+      The Argentine Meeting on Soft Matter (MAB VIII) is a space for academic and scientific exchange dedicated to soft materials, the physics and chemistry of complex systems, and applied nanotechnology.
+
+      We will gather in the city of La Plata on <strong>September 18th and 19th, 2025</strong>.
+
+    </p>
+
+  </section>
+
+
+
+  <section class="cards">
+
+    <div class="card">
+
+      <h3>Important Dates</h3>
+
+      <ul class="fechas">
+
+        <li><strong>Abstract Submission:</strong> until July 1st</li>
+
+        <li><strong>Notification:</strong> August 1st</li>
+
+      </ul>
+
+    </div>
+
+
+
+    <div class="card">
+
+      <h3>Formats</h3>
+
+      <p>
+
+        Participate with oral presentations or posters.
+
+      </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+      <h3>Contact</h3>
+
+      <p>albesa@inifta.unlp.edu.ar<br>
+
+         apicco@inifta.unlp.edu.ar<br>
+
+         La Plata, Argentina
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <footer>
+
+    &copy; 2025 MAB VIII · La Plata
+
+  </footer>
+
+
 
 </body>
+
 </html>
+
