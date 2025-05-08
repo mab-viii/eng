@@ -1,240 +1,134 @@
 /* =====================================================
-   EAMAB VIII – Common Stylesheet (left-aligned version)
-   File: estilos.css
-   ===================================================== */
+   EAMAB VIII – Hoja de estilos común (versión alineada a la izquierda)
+   Archivo: estilos.css
+   ===================================================== */
 
 :root {
-  --azul-oscuro: #004e7c; /* dark blue */
-  --azul-claro:  #0079b8; /* light blue */
-  --gris-fondo:  #f5f7fa; /* background gray */
-  --gris-borde:  #ddd;    /* border gray */
-  --gris-callout:#eaf4fb; /* callout gray */
-  --texto:       #222;    /* text color */
+  --azul-oscuro: #004e7c;
+  --azul-claro:  #0079b8;
+  --gris-fondo:  #f5f7fa;
+  --gris-borde:  #ddd;
+  --gris-callout:#eaf4fb;
+  --texto:       #222;
 }
 
 *{box-sizing:border-box;}
 
 body{
-  margin:0;
-  font-family:'Montserrat',sans-serif;
-  background:var(--gris-fondo);
-  color:var(--texto);
-  line-height:1.5;
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  background:var(--gris-fondo);
+  color:var(--texto);
+  line-height:1.5;
 }
 
-/* ---------- HEADER with logo aligned left ---------- */
+/* ---------- HEADER con logo alineado a la izquierda ---------- */
 header{
-  background:linear-gradient(90deg,var(--azul-oscuro),var(--azul-claro));
-  color:#fff;
-  padding:2rem 3vw;          /* fluid side margin */
-  display:flex;
-  align-items:center;
-  gap:1rem;
-  position: relative; /* ¡MUY IMPORTANTE para el language switcher! */
+  background:linear-gradient(90deg,var(--azul-oscuro),var(--azul-claro));
+  color:#fff;
+  padding:2rem 3vw;          /* margen lateral fluido */
+  display:flex;
+  align-items:center;
+  gap:1rem;
 }
 header .logo{
-  height:64px; /* Puedes ajustarlo si es necesario, o usar el de 60px como en el HTML */
-  width:auto;
+  height:64px;
+  width:auto;
 }
 header h1{
-  font-size:2rem; /* O 1.5rem como en el HTML de la home */
-  margin:0;
+  font-size:2rem;
+  margin:0;
 }
-header p{ /* Este estilo es para el subtítulo del header, puede que no todas las páginas lo tengan */
-  font-size:1rem;
-  margin:0.25rem 0 0;
-  max-width:60ch;
+header p{
+  font-size:1rem;
+  margin:0.25rem 0 0;
+  max-width:60ch;
 }
-
-/* === ESTILOS PARA EL SELECTOR DE IDIOMA === */
-.language-switcher {
-  position: absolute;
-  top: 1.5rem;       /* Ajusta según necesites */
-  right: 3vw;        /* Ajusta según necesites */
-  font-family: 'Montserrat', sans-serif;
-  color: white;      /* Para el separador "|" */
-}
-
-.language-switcher a {
-  text-decoration: none;
-  font-weight: bold;
-  margin-left: 0.4rem;
-  font-size: 0.9em;
-  color: white;      /* Color de los enlaces ESP/ENG */
-}
-
-.language-switcher a:first-child {
-  margin-left: 0;
-}
-/* === FIN DE ESTILOS PARA EL SELECTOR DE IDIOMA === */
-
 
 /* ---------- NAV ---------- */
 nav{
-  background:#fff;
-  border-bottom:1px solid var(--gris-borde);
-  padding:0.5rem 3vw;
-  display:flex;
-  flex-wrap:wrap;
-  gap:0.75rem;
-  font-size:0.95rem;
+  background:#fff;
+  border-bottom:1px solid var(--gris-borde);
+  padding:0.5rem 3vw;
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.75rem;
+  font-size:0.95rem;
 }
 nav a{
-  color:var(--azul-oscuro);
-  text-decoration:none;
-  font-weight:700;
-  padding:0.4rem 0.6rem;
-  border-radius:4px;
+  color:var(--azul-oscuro);
+  text-decoration:none;
+  font-weight:700;
+  padding:0.4rem 0.6rem;
+  border-radius:4px;
 }
-nav a:hover{background:var(--gris-callout);}
-nav a.active{
-    color:var(--azul-claro);
-    border-bottom:3px solid var(--azul-claro);
-    /* Nota: El padding original de nav a podría interferir con el borde inferior.
-       Si el borde no se ve bien, considera quitar el padding-bottom de 'nav a'
-       o ajustar el padding de 'nav a.active' específicamente. */
-}
+nav a:hover{background:var(--gris-callout);} 
+nav a.active{color:var(--azul-claro);border-bottom:3px solid var(--azul-claro);} 
 
-/* ---------- SECTIONS (full width with fluid margin) ---------- */
+/* ---------- SECTIONS (ancho completo con margen fluido) ---------- */
 section{
-  padding:2rem 3vw;
-  margin:0;           /* no centering, all left-aligned */
+  padding:2rem 3vw;
+  margin:0;           /* sin centrado, todo a la izquierda */
 }
 
 h2{
-  color:var(--azul-oscuro);
-  border-bottom:2px solid var(--azul-oscuro);
-  padding-bottom:0.5rem;
-  margin-top:0;
+  color:var(--azul-oscuro);
+  border-bottom:2px solid var(--azul-oscuro);
+  padding-bottom:0.5rem;
+  margin-top:0;
 }
 
-/* ---------- COMPONENTS ---------- */
+/* ---------- COMPONENTES ---------- */
 .hero{background:var(--gris-callout);padding:3rem 3vw;border-radius:8px;margin-bottom:2rem;text-align:left;}
 .hero h2{font-size:2rem;margin:0 0 1rem;}
 .hero p{font-size:1.1rem;margin:0;max-width:75ch;}
 
-/* grid and card */
-.grid{ /* Asumo que .grid es el contenedor de .card, similar a .cards en tu home */
-  display:flex;
-  gap:1.5rem;
-  justify-content:center; /* o left, según tu diseño general */
-  flex-wrap:wrap;
-  margin-top:2rem;
+/* grid y tarjeta */
+.grid{
+  display:flex;
+  gap:1.5rem;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:2rem;
 }
 .card{
-  background:#fff;
-  padding:1.5rem;
-  border-radius:8px;
-  box-shadow:0 2px 6px rgba(0,0,0,.1);
-  text-align:center; /* o left, según el contenido */
-  flex: 1 1 280px; /* Para que sean flexibles como en la home */
-  max-width: 350px; /* Consistente con la home */
+  background:#fff;
+  padding:1.5rem;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,.1);
+  text-align:center;
+  width:240px;           /* más ancho */
 }
 .card h3{
-  font-size:1.2rem; /* Un poco más grande para consistencia */
-  color: var(--azul-oscuro); /* Consistente con la home */
-  margin-top:0;
-  margin-bottom:1rem;
+  font-size:1rem;        /* texto levemente más chico */
+  margin-bottom:0.3rem;
 }
 .card p{
-  margin:0;
-  word-break:break-word;
-  font-size: 0.95rem; /* Consistente con la home */
-}
-/* Para la lista de fechas importantes dentro de una card */
-.card .fechas {
-  list-style: none;
-  padding: 0;
-  text-align: left; /* O center si prefieres */
-  margin: 0;
-}
-.card .fechas li {
-  margin-bottom: 0.5rem;
-}
-.card .fechas strong {
-  font-weight: 700; /* Ya lo tienes, pero para asegurar */
-  color: var(--texto);
+  margin:0;
+  word-break:break-word; /* permite cortar palabras largas */
 }
 
 
 .callout{background:var(--gris-callout);padding:1rem;border-left:4px solid var(--azul-claro);border-radius:4px;margin:1rem 0;}
 
-.boton{display:inline-block;margin-top:1rem;margin-right:1rem;padding:0.75rem 1.5rem;background:var(--azul-oscuro);color:#fff;text-decoration:none;border-radius:4px;font-weight:600;} /* button */
-.boton:hover{background:var(--azul-claro);}
+.boton{display:inline-block;margin-top:1rem;margin-right:1rem;padding:0.75rem 1.5rem;background:var(--azul-oscuro);color:#fff;text-decoration:none;border-radius:4px;font-weight:600;}
+.boton:hover{background:var(--azul-claro);} 
 
 footer{background:var(--azul-oscuro);color:#fff;text-align:left;padding:1rem 3vw;margin-top:3rem;font-size:0.9rem;}
 
-/* ---------- TABLES ---------- */
-table{width:100%;border-collapse:collapse;background:#fff;}
-th,td{padding:0.75rem;border:1px solid var(--gris-borde);text-align:left;}
-thead th{background:var(--gris-callout);}
+/* ---------- TABLAS ---------- */
+ table{width:100%;border-collapse:collapse;background:#fff;}
+ th,td{padding:0.75rem;border:1px solid var(--gris-borde);text-align:left;}
+ thead th{background:var(--gris-callout);} 
 
 /* ---------- RESPONSIVE ---------- */
-@media(max-width:768px){ /* Ajustado breakpoint para consistencia con la home */
-  header{
-    flex-direction:column;
-    align-items:center; /* Centrar logo y título en móvil */
-    text-align: center; /* Centrar texto del título si es un bloque */
-    padding:1.5rem 3vw;
-  }
-  header .logo{
-    height:48px; /* O 60px si prefieres mantenerlo más grande */
-    display: block; /* Para centrar con margin auto si es necesario */
-    margin-left: auto;
-    margin-right: auto;
-  }
-  header h1 {
-    font-size: 1.5rem; /* Ajusta según preferencia */
-  }
-  header p { /* Subtítulo del header */
-    font-size: 0.9rem;
-    text-align: center;
-  }
-
-  /* Ajustes responsivos para el selector de idioma */
-  .language-switcher {
-    position: static; /* Quitar posicionamiento absoluto en móviles */
-    text-align: center; /* Centrar los idiomas */
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    width: 100%; /* Ocupar el ancho para el fondo */
-    background-color: rgba(0,0,0,0.1); /* Fondo sutil para destacar */
-    margin-top: 1rem; /* Espacio si el header se apila */
-  }
-
-  nav{
-    font-size:0.85rem;
-    gap:0.5rem;
-    flex-direction: column; /* Apilar enlaces de navegación */
-    align-items: center; /* Centrar enlaces apilados */
-  }
-  nav a {
-    width: 80%; /* Darles un ancho a los enlaces apilados */
-    text-align: center;
-    border-bottom: 1px solid var(--gris-borde);
-  }
-  nav a:last-child{
-    border-bottom: none;
-  }
-  nav a.active {
-    border-bottom:3px solid var(--azul-claro); /* Mantener el borde activo */
-  }
-
-  .grid{flex-direction:column; align-items: center;} /* Si usas .grid como contenedor de .card */
-  .cards{flex-direction:column; align-items: center;} /* Si usas .cards como en la home */
-  .card{max-width:90%; width: 100%;} /* Que las tarjetas ocupen más ancho */
-
-  .hero h2{font-size:1.6rem;}
-  .hero p{font-size:1rem;}
-}
-
-/* Específico para la página de certificados, si tiene una clase .info */
-.info ul {
-    list-style: disc;
-    margin-left: 20px; /* O padding-left: 20px; */
-    margin-top: 0.5rem;
-}
-.info ul li {
-    margin-bottom: 0.25rem;
+@media(max-width:600px){
+  header{flex-direction:column;align-items:flex-start;padding:1.5rem 3vw;}
+  header .logo{height:48px;}
+  nav{font-size:0.85rem;gap:0.5rem;}
+  .cards{flex-direction:column;}
+  .card{max-width:90%;}
+  .hero h2{font-size:1.6rem;}
+  .hero p{font-size:1rem;}
 }
 
