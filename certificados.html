@@ -29,7 +29,6 @@
       flex: 1;
       text-align: center;
       text-decoration: none;
-      /* color: inherit;  Mejor ser explícito, usando el color de tu variable --azul-oscuro */
       color: #004e7c; /* var(--azul-oscuro) */
       padding: 0.5rem 0;
       font-weight: 700; /* Consistente con estilos.css */
@@ -62,45 +61,45 @@
     }
     /* === FIN DE ESTILOS DEL SELECTOR DE IDIOMA === */
 
-    /* Estilos adicionales para mejorar la presentación de esta página específica si es necesario */
-    /* Asegúrate de que el header en estilos.css tenga position: relative; */
+    /* Estilos para el header en esta página, asegurando que el selector de idioma funcione */
     header {
-        /* Asumiendo que estilos.css define el fondo y color del header.
-           Si no, necesitarías algo como:
-           background: linear-gradient(90deg, #004e7c, #0079b8);
-           color: #fff;
-           padding: 2rem 3vw;
-           display: flex;
-           align-items: center;
-           gap: 1rem;
-           position: relative; <--- ¡Importante para el language switcher!
-        */
+      /* Estas propiedades son ejemplos y deberían idealmente venir de estilos.css
+         pero se añaden aquí para asegurar la funcionalidad del language switcher en esta página.
+         La más importante es 'position: relative;' */
+      background: linear-gradient(90deg, #004e7c, #0079b8); /* Ejemplo de fondo de tu estilos.css */
+      color: #fff; /* Texto blanco */
+      padding: 2rem 3vw;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: relative; /* ¡MUY IMPORTANTE para el posicionamiento del language switcher! */
     }
+
      header .logo {
         /* Asumiendo que estilos.css define el tamaño del logo.
-           Si no, por ejemplo:
-           height: 64px;
+           Si no, por ejemplo: */
+           height: 64px; /* O el valor que uses en estilos.css */
            width: auto;
-        */
     }
+
     header h1 {
         /* Asumiendo que estilos.css define el tamaño y margen del h1.
-           Si no, por ejemplo:
-           font-size: 2rem;
+           Si no, por ejemplo: */
+           font-size: 2rem; /* O el valor que uses en estilos.css */
            margin:0;
-        */
     }
+
      header p {
         /* Asumiendo que estilos.css define el tamaño y margen del p.
-           Si no, por ejemplo:
-           font-size:1rem;
+           Si no, por ejemplo: */
+           font-size:1rem; /* O el valor que uses en estilos.css */
            margin:0.25rem 0 0;
-        */
     }
 
     section {
         padding: 2rem 3vw; /* Consistente con tu diseño general */
     }
+
     section h2 {
         color: #004e7c; /* var(--azul-oscuro) */
         border-bottom: 2px solid #004e7c; /* var(--azul-oscuro) */
@@ -108,40 +107,43 @@
         margin-top: 0;
         margin-bottom: 1rem; /* Espacio debajo de H2 */
     }
+
     /* Estilos para la sección .info específica de esta página */
     .info {
         /* Puedes añadir estilos específicos para el div con clase "info" aquí si es necesario */
     }
+
     .info p {
         margin-bottom: 0.75rem; /* Espacio entre párrafos dentro de .info */
     }
+
     .info ul {
         list-style: disc; /* Estilo de viñeta */
         margin-left: 20px; /* Indentación para la lista */
         padding-left: 0; /* Evitar doble indentación */
         margin-top: 0.5rem; /* Espacio antes de la lista */
     }
+
     .info ul li {
         margin-bottom: 0.25rem; /* Espacio entre ítems de la lista */
     }
 
     footer {
         /* Asumiendo que estilos.css define el footer.
-           Si no, por ejemplo:
-           background: #004e7c;
+           Si no, por ejemplo: */
+           background: #004e7c; /* var(--azul-oscuro) */
            color: #fff;
-           text-align: left;
+           text-align: left; /* O el que uses en estilos.css */
            padding: 1rem 3vw;
            margin-top: 3rem;
            font-size: 0.9rem;
-        */
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="https://placehold.co/150x50/ffffff/004e7c?text=MAB+VIII+Logo" alt="MAB VIII logo" class="logo">
+    <img src="Logo_Blanco.png" alt="MAB VIII logo" class="logo">
     <div> <h1>MAB VIII - Certificates</h1>
         <p>Activities of September 18th and 19th, 2025</p>
     </div>
