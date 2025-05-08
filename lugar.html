@@ -6,113 +6,198 @@
   <title>Venue – MAB VIII</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilos.css">
+
   <style>
+    /* Estilos base para el cuerpo si estilos.css no se carga o está incompleto */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      /* margin: 0; Ya está en tus estilos globales de abajo */
+      background-color: #f5f7fa; /* --gris-fondo */
+      color: #222; /* --texto */
+    }
+
     html, body {
       height: 100%;
       margin: 0;
     }
+
     body {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      /* justify-content: space-between; /* Puede causar problemas si el contenido es corto */
     }
-    header, nav, section, footer {
+
+    header, nav, footer { /* section se maneja por separado */
       width: 100%;
-      margin: 0;
-     /* padding: 0; Removed global padding 0 here as section needs padding */
+      /* margin: 0; Ya está en html, body */
     }
-    /* Adjusted header to use styles from estilos.css base */
+
+    /* Header ajustado con position: relative para el language switcher */
     header {
-       /* background:linear-gradient(90deg,var(--azul-oscuro),var(--azul-claro)); */ /* Already in estilos.css */
-       /* color:#fff; */ /* Already in estilos.css */
-       padding: 1rem 2%; /* Adjusted padding */
-       display:flex;
-       align-items:center;
-       /* justify-content: flex-start; */ /* Keep default flex-start */
-       gap: 1rem; /* Added gap */
+      /* background:linear-gradient(90deg,var(--azul-oscuro),var(--azul-claro)); /* Asumiendo de estilos.css */
+      /* color:#fff; /* Asumiendo de estilos.css */
+      padding: 1rem 3vw; /* Ajustado padding para consistencia */
+      display:flex;
+      align-items:center;
+      gap: 1rem;
+      position: relative; /* ¡MUY IMPORTANTE para el language switcher! */
+      /* Usando los colores de tu estilos.css como fallback si no se carga el archivo */
+      background: linear-gradient(90deg, #004e7c, #0079b8);
+      color: #fff;
     }
+
     header .logo {
-        /* max-height: 60px; */ /* Use height from estilos.css or local override */
-        height: 60px; /* Explicitly set height */
-        width: auto;
-        /* margin-right: 1rem; */ /* Replaced by gap */
+      height: 60px; /* Altura explícita del logo */
+      width: auto;
     }
-    header div { /* Wrapper for h1 and p */
+
+    header div { /* Contenedor para h1 y p en el header */
       text-align: left;
     }
-     /* Copied nav styles from index.html for consistency */
+    header h1 {
+        font-size: 2rem; /* O el valor que uses en estilos.css */
+        margin:0;
+        color: #fff; /* Asegurar color blanco si no viene de estilos.css */
+    }
+    header p {
+        font-size:1rem; /* O el valor que uses en estilos.css */
+        margin:0.25rem 0 0;
+        color: #fff; /* Asegurar color blanco si no viene de estilos.css */
+    }
+
+
+    /* === ESTILOS PARA LOS ENLACES DE IDIOMA (ajustados para header oscuro) === */
+    .language-switcher {
+      position: absolute;
+      top: 1.5rem;      /* Distancia desde el borde superior del header */
+      right: 3vw;       /* Distancia desde el borde derecho del header */
+      font-family: 'Montserrat', sans-serif;
+      color: white;     /* Asegura que el separador "|" sea blanco sobre fondo oscuro */
+    }
+
+    .language-switcher a {
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 0.4rem; /* Espacio entre "ESP", "|" y "ENG" */
+      font-size: 0.9em;
+      color: white;     /* Se usa color blanco para que contraste con el header oscuro */
+    }
+
+    .language-switcher a:first-child {
+      margin-left: 0; /* Sin margen a la izquierda para el primer enlace (ESP) */
+    }
+    /* === FIN DE ESTILOS DEL SELECTOR DE IDIOMA === */
+
+    /* Estilos de Nav consistentes con otras páginas */
     nav {
       display: flex;
       justify-content: space-around;
-      padding: 0.5rem 0; /* Changed padding to be vertical only */
-      background:#fff; /* Added background */
-      border-bottom:1px solid var(--gris-borde); /* Added border */
+      padding: 0.5rem 3vw; /* Padding consistente */
+      background:#fff;
+      border-bottom:1px solid #ddd; /* var(--gris-borde) */
     }
+
     nav a {
-      flex: 1;
+      /* flex: 1; */ /* Puede ser opcional con space-around */
       text-align: center;
       text-decoration: none;
-      color: var(--azul-oscuro); /* Changed from inherit */
-      padding: 0.5rem 0;
-      font-weight: 700; /* Added font-weight */
+      color: #004e7c; /* var(--azul-oscuro) */
+      padding: 0.4rem 0.6rem; /* Padding consistente */
+      font-weight: 700;
+      border-radius: 4px; /* Para el hover */
     }
+
+    nav a:hover{
+        background: #eaf4fb; /* var(--gris-callout) */
+    }
+
     nav a.active {
-      color: var(--azul-claro);
-      border-bottom: 3px solid var(--azul-claro);
+      color: #0079b8; /* var(--azul-claro) */
+      border-bottom: 3px solid #0079b8; /* var(--azul-claro) */
     }
-    nav a:hover{ background: var(--gris-callout); border-radius: 4px;} /* Added hover */
 
     section {
-      padding: 1rem 2%; /* Adjusted padding */
+      padding: 2rem 3vw; /* Padding consistente */
       text-align: left;
-      /* flex: 1; Removed flex: 1 */
+      flex: 1; /* Permite que la sección principal crezca y empuje el footer */
     }
-    .mapa { /* map */
+    section h2 { /* Estilo para el H2 dentro de la sección */
+        color: #004e7c; /* var(--azul-oscuro) */
+        border-bottom: 2px solid #004e7c; /* var(--azul-oscuro) */
+        padding-bottom: 0.5rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .mapa-container { /* Contenedor para el mapa para centrarlo */
+        text-align: center; /* Centra el iframe si es inline-block o tiene margin auto */
+        margin: 1rem 0;
+    }
+    .mapa { /* iframe del mapa */
       width: 100%;
-      max-width: 800px; /* Added max-width for larger screens */
-      height: 450px; /* Slightly reduced height */
-      border: 0;
+      max-width: 800px;
+      height: 400px; /* Ajustado */
+      border: 1px solid #ddd; /* Borde sutil */
       border-radius: 8px;
-      display: block; /* Ensure it behaves like a block */
-      margin: 1rem auto; /* Center map */
+      display: block; /* Para que margin: auto funcione si se usa */
+      margin: 0 auto; /* Centra el mapa si el contenedor es más ancho */
     }
-    .listado { /* listing */
+
+    .listado { /* Contenedor para las columnas de hoteles/restaurantes */
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
-      margin-top: 1rem;
-      justify-content: center; /* Center columns on wider screens */
+      margin-top: 1.5rem; /* Espacio antes de las columnas */
+      justify-content: flex-start; /* Alinea las columnas a la izquierda por defecto */
     }
-    .columna { /* column */
-      flex: 1 1 300px;
-      max-width: 400px; /* Keep max-width */
-      /* Added for clarity */
+
+    .columna { /* Cada columna de información */
+      flex: 1 1 300px; /* Permite que crezcan pero con base de 300px */
+      max-width: 45%; /* Evita que una sola columna ocupe todo en pantallas grandes */
+      min-width: 280px; /* Ancho mínimo para contenido */
       background-color: #fff;
-      padding: 1rem;
+      padding: 1.5rem; /* Más padding interno */
       border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08); /* Sombra un poco más suave */
     }
+
     .columna h3 {
-      margin-top: 0; /* Remove top margin */
-      margin-bottom: 0.5rem;
-      color: var(--azul-oscuro); /* Match h2 color */
-      border-bottom: 1px solid var(--gris-borde); /* Add subtle line */
-      padding-bottom: 0.3rem;
+      margin-top: 0;
+      margin-bottom: 1rem; /* Más espacio debajo del h3 */
+      color: #004e7c; /* var(--azul-oscuro) */
+      border-bottom: 1px solid #ddd; /* var(--gris-borde) */
+      padding-bottom: 0.5rem; /* Espacio para la línea */
+      font-size: 1.2rem; /* Tamaño del título de la columna */
     }
+
     .columna ul {
       list-style: disc;
-      padding-left: 1.2rem;
-      margin-bottom: 0; /* Remove bottom margin */
+      padding-left: 1.5rem; /* Indentación de la lista */
+      margin-bottom: 0;
     }
-    /* Ensure footer is consistent */
-     footer {
-         /* background:var(--azul-oscuro); */ /* Already in estilos.css */
-         /* color:#fff; */ /* Already in estilos.css */
-         text-align:left;
-         padding:1rem 2%; /* Adjusted padding */
-         margin-top:3rem;
-         font-size:0.9rem;
-     }
+    .columna ul li {
+        margin-bottom: 0.5rem; /* Espacio entre ítems de la lista */
+    }
+    .columna ul li a {
+        color: #0079b8; /* var(--azul-claro) para enlaces */
+        text-decoration: none;
+    }
+    .columna ul li a:hover {
+        text-decoration: underline;
+    }
+
+    /* Footer consistente */
+    footer {
+      /* background:var(--azul-oscuro); /* Asumiendo de estilos.css */
+      /* color:#fff; /* Asumiendo de estilos.css */
+      text-align:left;
+      padding:1rem 3vw; /* Padding consistente */
+      margin-top:2rem; /* Espacio antes del footer */
+      font-size:0.9rem;
+      /* Usando los colores de tu estilos.css como fallback si no se carga el archivo */
+      background: #004e7c;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -122,6 +207,9 @@
     <div>
       <h1>Meeting Venue</h1>
       <p>Sergio Karakachoff Building · National University of La Plata</p>
+    </div>
+    <div class="language-switcher">
+      <a href="https://mab-viii.github.io/esp/" lang="es">ESP</a> | <a href="https://mab-viii.github.io/eng/" lang="en">ENG</a>
     </div>
   </header>
 
@@ -142,12 +230,15 @@
       MAB VIII will take place at the <strong>Sergio Karakachoff Building</strong>,
       Calle 48 N.º 551 (between 6 and 7), La Plata city, Argentina.
     </p>
-    <iframe
-      class="mapa"
-      src="https://maps.google.com/maps?q=Edificio%20Sergio%20Karakachoff&t=&z=15&ie=UTF8&iwloc=&output=embed"
-      loading="lazy"
-      title="Location Map for Edificio Sergio Karakachoff"> <!-- Added title attribute -->
-    </iframe>
+    <div class="mapa-container">
+        <iframe
+          class="mapa"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.920009849618!2d-57.9488006847627!3d-34.9084779803813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e63c50e15555%3A0x24a9a223531390d9!2sEdificio%20Sergio%20Karakachoff!5e0!3m2!1sen!2sar!4v1683559282000!5m2!1sen!2sar"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Location Map for Edificio Sergio Karakachoff">
+        </iframe>
+        </div>
   </section>
 
   <section>
