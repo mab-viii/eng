@@ -28,7 +28,30 @@
       color: var(--azul-claro);
       border-bottom: 3px solid var(--azul-claro);
     }
-     
+         /* === NUEVOS ESTILOS para los enlaces de idioma === */
+    .language-switcher {
+      position: absolute;
+      top: 1.5rem;      /* Ajusta esta distancia desde el borde superior del header */
+      right: 3vw;       /* Ajusta esta distancia desde el borde derecho del header */
+      font-family: 'Montserrat', sans-serif;
+      /* Si el header tiene fondo oscuro y texto blanco, el separador "|" también debe ser blanco */
+      /* color: white; */ /* Descomenta si el separador "|" debe ser blanco */
+    }
+
+    .language-switcher a {
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 0.4rem; /* Espacio entre "ESP", "|" y "ENG" */
+      font-size: 0.9em;
+      /* Color de los enlaces: si el header tiene fondo oscuro, ponlos blancos */
+      color: #000; /* Color por defecto (negro). Cambia a 'white' si el fondo del header es oscuro. */
+      /* color: white; */ /* Descomenta esta línea si el fondo de tu header es oscuro */
+    }
+
+    .language-switcher a:first-child {
+      margin-left: 0;
+    }
+    /* === FIN DE NUEVOS ESTILOS === */
   </style>
 </head>
 
@@ -38,6 +61,9 @@
     <img src="Logo_Blanco.png" alt="MAB VIII logo" class="logo">
     <h1>MAB VIII - Abstract Submission</h1>
     <p>Deadline: July 1st, 2025</p>
+    <div class="language-switcher">
+      <a href="https://mab-viii.github.io/esp/" lang="es">ESP</a> | <a href="https://mab-viii.github.io/eng/" lang="en">ENG</a>
+    </div>
   </header>
 
   <nav>
