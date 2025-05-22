@@ -5,20 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registration – MAB VIII</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="estilos.css"> <!-- Make sure this path is correct if your English version is in a subfolder -->
 
   <style>
-    /* Estilos base para el cuerpo si estilos.css no se carga o está incompleto */
+    /* Base styles for the body if estilos.css doesn't load or is incomplete */
     body {
       font-family: 'Montserrat', sans-serif;
-      /* margin: 0; Ya está en tus estilos globales de abajo */
       background-color: #f5f7fa; /* --gris-fondo */
       color: #222; /* --texto */
     }
 
-    /* —————————————————————————————
-       Global adjustments for centering and occupying full width/height
-       ————————————————————————————— */
     html, body {
       height: 100%;
       margin: 0;
@@ -27,189 +23,197 @@
     body {
       display: flex;
       flex-direction: column;
-      /* justify-content: space-between; /* Puede causar que el footer no siempre esté al final si el contenido es corto.
-                                         Considera usar flex-grow: 1 en la sección principal si es necesario. */
     }
 
-    header, nav, section, footer {
+    header, nav, footer { /* section is handled separately */
       width: 100%;
-      /* margin: 0;  Ya está en html, body */
-      /* padding: 0; Puede ser demasiado restrictivo, es mejor definir paddings específicos donde se necesiten.
-                     Por ejemplo, tu header y section ya tienen paddings definidos más abajo. */
     }
 
-    /* Centered Header (con ajustes para el language switcher) */
+    /* Centered Header */
     header {
       text-align: left;
-      padding-top: 1rem; /* Padding superior */
-      padding-bottom: 1rem; /* Padding inferior para espaciar del nav */
-      /* Las siguientes propiedades son ejemplos y deberían idealmente venir de estilos.css
-         pero se añaden aquí para asegurar la funcionalidad del language switcher en esta página.
-         La más importante es 'position: relative;' */
-      background: linear-gradient(90deg, #004e7c, #0079b8); /* Ejemplo de fondo de tu estilos.css */
-      color: #fff; /* Texto blanco */
-      padding-left: 3vw; /* Consistente con otras páginas */
-      padding-right: 3vw; /* Consistente con otras páginas */
-      display: flex; /* Para alinear logo y texto si es necesario, o para centrar contenido */
-      flex-direction: column; /* Apila logo, h1, p, y switcher si están directos */
-      align-items: center; /* Centra los elementos del header */
-      gap: 0.5rem; /* Espacio entre elementos del header */
-      position: relative; /* ¡MUY IMPORTANTE para el posicionamiento del language switcher! */
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      background: linear-gradient(90deg, #004e7c, #0079b8);
+      color: #fff;
+      padding-left: 3vw;
+      padding-right: 3vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      position: relative;
     }
     header .logo {
-        /* Asumiendo que estilos.css define el tamaño del logo. Si no, por ejemplo: */
-           height: 64px; /* O el valor que uses en estilos.css */
+           height: 64px;
            width: auto;
-           margin-bottom: 0.5rem; /* Espacio debajo del logo */
+           margin-bottom: 0.5rem;
     }
     header h1 {
-        /* Asumiendo que estilos.css define el tamaño y margen del h1. Si no, por ejemplo: */
-           font-size: 2rem; /* O el valor que uses en estilos.css */
+           font-size: 2rem;
            margin:0;
+           color: #fff; /* Ensure white color */
     }
      header p {
-        /* Asumiendo que estilos.css define el tamaño y margen del p. Si no, por ejemplo: */
-           font-size:1rem; /* O el valor que uses en estilos.css */
+           font-size:1rem;
            margin:0.25rem 0 0;
+           color: #fff; /* Ensure white color */
     }
 
-
-    /* === ESTILOS PARA LOS ENLACES DE IDIOMA (ajustados para header oscuro) === */
+    /* === LANGUAGE SWITCHER STYLES (adjusted for dark header) === */
     .language-switcher {
       position: absolute;
-      top: 1.5rem;      /* Distancia desde el borde superior del header */
-      right: 3vw;       /* Distancia desde el borde derecho del header */
+      top: 1.5rem;
+      right: 3vw;
       font-family: 'Montserrat', sans-serif;
-      color: white;     /* Asegura que el separador "|" sea blanco sobre fondo oscuro */
+      color: white;
     }
-
     .language-switcher a {
       text-decoration: none;
       font-weight: bold;
-      margin-left: 0.4rem; /* Espacio entre "ESP", "|" y "ENG" */
+      margin-left: 0.4rem;
       font-size: 0.9em;
-      color: white;     /* Se usa color blanco para que contraste con el header oscuro */
+      color: white;
     }
-
     .language-switcher a:first-child {
-      margin-left: 0; /* Sin margen a la izquierda para el primer enlace (ESP) */
+      margin-left: 0;
     }
-    /* === FIN DE ESTILOS DEL SELECTOR DE IDIOMA === */
+    /* === END OF LANGUAGE SWITCHER STYLES === */
 
     /* Menu distributed width-wise */
     nav {
       display: flex;
       justify-content: space-around;
-      padding: 0.5rem 3vw; /* Añadido padding horizontal consistente con estilos.css */
-      background-color: #fff; /* Fondo blanco para la nav, si no está en estilos.css */
-      border-bottom: 1px solid #ddd; /* Borde inferior, si no está en estilos.css */
+      padding: 0.5rem 3vw;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
     }
-
     nav a {
-      /* flex: 1;  Puede ser redundante si justify-content: space-around; ya distribuye bien */
       text-align: center;
       text-decoration: none;
-      /* color: inherit; Es mejor ser explícito, usando el color de tu variable --azul-oscuro */
       color: #004e7c; /* var(--azul-oscuro) */
-      padding: 0.4rem 0.6rem; /* Consistente con estilos.css */
-      font-weight: 700; /* Consistente con estilos.css */
-      border-radius: 4px; /* Consistente con estilos.css */
+      padding: 0.4rem 0.6rem;
+      font-weight: 700;
+      border-radius: 4px;
     }
     nav a:hover {
-        background: #eaf4fb; /* var(--gris-callout) de estilos.css */
+        background: #eaf4fb; /* var(--gris-callout) */
     }
     nav a.active {
       color: #0079b8; /* var(--azul-claro) */
       border-bottom: 3px solid #0079b8; /* var(--azul-claro) */
-      /* El padding de 'nav a' puede necesitar ajuste si el borde se come el texto */
     }
 
     /* Left-aligned Section */
     section {
       text-align: left;
-      padding: 2rem 3vw; /* Padding consistente con otras páginas y estilos.css */
-      flex: 1; /* Permite que la sección crezca para empujar el footer hacia abajo */
+      padding: 2rem 3vw;
+      flex: 1;
     }
-    section h2 { /* Estilo para el H2 dentro de la sección */
+    section h2 { /* Style for H2 within the section */
         color: #004e7c; /* var(--azul-oscuro) */
         border-bottom: 2px solid #004e7c; /* var(--azul-oscuro) */
         padding-bottom: 0.5rem;
         margin-top: 0;
-        margin-bottom: 1.5rem; /* Más espacio debajo de H2 antes de la tabla */
+        margin-bottom: 1.5rem;
     }
-    section h3 { /* Estilo para el H3 de descuentos */
-        color: #004e7c; /* var(--azul-oscuro) */
-        margin-top: 2rem; /* Espacio antes del título de descuentos */
-        margin-bottom: 0.5rem;
-        font-size: 1.2rem;
-    }
+    /* section h3 is removed as specific content replaces it */
 
-
-    /* Fluid Table (original) */
+    /* Fluid Table */
     table {
       width: 100%;
       border-collapse: collapse;
       margin: 1rem 0;
-      background: #fff; /* Fondo blanco para la tabla */
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Sombra sutil */
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
-    th, td { /* Estilo común para celdas, si no está en estilos.css */
+    th, td {
         border: 1px solid #ddd; /* var(--gris-borde) */
         padding: 0.75rem;
         text-align: left;
+        vertical-align: top;
     }
     thead th {
       background-color: #eaf4fb; /* var(--gris-callout) */
       font-weight: 700;
     }
+    /* Styles for the first column of the table (categories) */
+    tbody tr td:first-child {
+        font-weight: bold;
+        color: #333;
+    }
+    /* Styles for price columns */
+    tbody tr td:nth-child(2),
+    tbody tr td:nth-child(3) {
+        text-align: center; /* Center prices */
+    }
+    thead tr th:nth-child(2),
+    thead tr th:nth-child(3) {
+        text-align: center; /* Center price headers */
+    }
 
 
-    /* Discounts (original) */
-    .descuentos {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0;
-      max-width: 400px; /* Opcional, o hacerlo 100% si se prefiere */
-      /* background-color: #eaf4fb; /* var(--gris-callout) - Opcional para destacar la lista */
-      /* padding: 1rem; */
-      /* border-radius: 4px; */
+    /* Styles for the society member discount information block */
+    .info-descuentos-socios { /* Using the same class name as the Spanish version for consistency */
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.5rem;
+      background-color: #eaf4fb;
+      border-radius: 4px;
+      border: 1px solid #cce3f2;
     }
-    .descuentos li {
-      margin-bottom: 0.5rem; /* Un poco más de espacio */
-      font-size: 0.95rem;
+    .info-descuentos-socios > p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      font-weight: 500;
     }
-    .descuentos strong {
-      color: #0079b8; /* var(--azul-claro) */
-      font-weight: 700; /* Asegurar negrita */
+    .info-descuentos-socios ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin-top: 0;
+      margin-bottom: 0;
+      columns: 2; /* Distribute into 2 columns if space allows */
+      column-gap: 2rem;
     }
-    .descuentos em { /* Para el tipo de estudiante */
-        font-style: normal; /* Quitar cursiva si se prefiere */
+    .info-descuentos-socios li {
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    .info-descuentos-socios li strong {
+        color: #004e7c;
+        font-weight: 700;
+    }
+    /* Media query for a single column on small screens */
+    @media (max-width: 768px) {
+      .info-descuentos-socios ul {
+        columns: 1;
+      }
     }
 
 
     /* Registration button aligned left */
     .boton {
       display: inline-block;
-      margin: 1.5rem 0; /* Más margen superior */
+      margin: 1.5rem 0;
       padding: 0.75rem 1.5rem;
-      background: #004e7c; /* var(--azul-oscuro) de estilos.css */
-      color: #fff; /* Texto blanco del botón de estilos.css */
+      background: #004e7c;
+      color: #fff;
       text-decoration: none;
-      border-radius: 4px; /* Consistente con estilos.css */
-      font-weight: 700; /* o 600 como en estilos.css */
+      border-radius: 4px;
+      font-weight: 700;
     }
     .boton:hover {
-        background: #0079b8; /* var(--azul-claro) de estilos.css */
+        background: #0079b8;
     }
 
     footer {
-        /* Asumiendo que estilos.css define el footer. Si no, por ejemplo: */
-           background: #004e7c; /* var(--azul-oscuro) */
+           background: #004e7c;
            color: #fff;
-           text-align: left; /* O el que uses en estilos.css */
-           padding: 1rem 3vw; /* Consistente con estilos.css */
-           /* margin-top: 3rem; No es necesario si body es flex y section tiene flex:1 */
-           font-size: 0.9rem; /* Consistente con estilos.css */
+           text-align: left;
+           padding: 1rem 3vw;
+           font-size: 0.9rem;
     }
 
   </style>
@@ -217,7 +221,7 @@
 <body>
 
   <header>
-   <img src="Logo_Blanco.png" alt="MAB VIII logo" class="logo">
+   <img src="Logo_Blanco.png" alt="MAB VIII logo" class="logo"> <!-- Ensure Logo_Blanco.png is accessible -->
     <h1>MAB VIII – Registration</h1>
     <p>Argentine Meeting on Soft Matter – La Plata, December 18th and 19th, 2025</p>
     <div class="language-switcher">
@@ -226,45 +230,76 @@
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="inscripcion.html" class="active">Registration</a>
-    <a href="lugar.html">Venue</a>
-    <a href="conferencistas.html">Speakers</a>
-    <a href="abstracts.html">Abstract Submission</a>
-    <a href="cronograma.html">Schedule</a>
-    <a href="comite.html">Committee</a>
-    <a href="certificados.html">Certificates</a>
+    <a href="index.html">Home</a> <!-- Link to English home page -->
+    <a href="inscripcion.html" class="active">Registration</a> <!-- Link to this English registration page -->
+    <a href="lugar.html">Venue</a> <!-- Link to English venue page -->
+    <a href="conferencistas.html">Speakers</a> <!-- Link to English speakers page -->
+    <a href="abstracts.html">Abstract Submission</a> <!-- Link to English abstracts page -->
+    <a href="cronograma.html">Schedule</a> <!-- Link to English schedule page -->
+    <a href="comite.html">Committee</a> <!-- Link to English committee page -->
+    <a href="certificados.html">Certificates</a> <!-- Link to English certificates page -->
   </nav>
 
   <section>
-    <h2>Registration Categories</h2>
+    <h2>Registration Fees</h2>
     <table>
       <thead>
         <tr>
           <th>Category</th>
-          <th>Includes</th>
-          <th>Fee (ARS)</th>
+          <th>Early Bird Registration<br>(Deadline: July 15th)</th>
+          <th>Late Registration<br>(Deadline: August 30th)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>RAFA + MAB</td>
-          <td>Talks, digital materials, coffee breaks</td>
-          <td>TBC</td> </tr>
+          <td>Undergraduate Students</td>
+          <td>ARS $20,000</td>
+          <td>ARS $25,000</td> <!-- MODIFIED VALUE -->
+        </tr>
         <tr>
-          <td>MAB only</td>
-          <td>Talks, digital materials, coffee breaks</td>
-          <td>TBC</td> </tr>
+          <td>Postgraduate Students</td>
+          <td>ARS $30,000</td>
+          <td>ARS $40,000</td> <!-- MODIFIED VALUE -->
+        </tr>
+        <tr>
+          <td>Faculty and/or Researchers</td>
+          <td>ARS $50,000</td>
+          <td>ARS $65,000</td>
+        </tr>
+        <tr>
+          <td>Professionals</td>
+          <td>ARS $75,000</td>
+          <td>ARS $95,000</td>
+        </tr>
       </tbody>
     </table>
 
-    <h3>Discounts for Students and Young Researchers</h3>
+    <div class="info-descuentos-socios">
+      <p><strong>Members of the following associations will receive a 30% discount on both early bird and late registration fees:</strong></p>
+      <ul>
+        <li>Argentine Physics Association (<strong>AFA</strong>)</li>
+        <li>Argentine Association for Physicochemical Research (<strong>AAIFQ</strong>)</li>
+        <li>Argentine Chemical Association (<strong>AQA</strong>)</li>
+        <li>Argentine Biophysical Society (<strong>SAB</strong>)</li>
+        <li>Argentine Materials Society (<strong>SAM</strong>)</li>
+        <li>Uruguayan Physical Society (<strong>SUF</strong>)</li>
+        <li>Argentine Astronomical Association (<strong>AAA</strong>)</li>
+        <li>Argentine Association of Physics Teachers (<strong>APFA</strong>)</li>
+        <li>Argentine Association of Applied, Computational and Industrial Mathematics (<strong>ASAMAC</strong>)</li>
+        <li>Argentine Society of Medical Physics (<strong>SAFIM</strong>)</li>
+        <li>Argentine Mathematical Union (<strong>UMA</strong>)</li>
+        <li>American Physical Society (<strong>APS</strong>)</li>
+        <li>Royal Spanish Physical Society (<strong>RSEF</strong>)</li>
+        <li>Brazilian Physical Society (<strong>SBF</strong>)</li>
+      </ul>
+    </div>
 
+    <!-- Ensure the link below points to the correct English version of the form, or a form that handles language -->
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfptkPiLRj6tOJ3Ju7dqAdW1wZc21OtfdUDRfsTiLr0w3paww/viewform?usp=header" class="boton" target="_blank">Go to Registration Form</a>
   </section>
 
   <footer>
-    &copy; 2025 MAB VIII · La Plata
+    © 2025 MAB VIII · La Plata
   </footer>
 
 </body>
